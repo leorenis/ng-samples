@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LikeWidgetComponent } from './like-widget.component';
 import { UniqueService } from '../../services/unique-service/unique-service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LikeService } from '../../services/like/like-service';
+import { LikeStore } from '../../services/store/like-store';
 
 describe(LikeWidgetComponent.name, () => {
   let fixture: ComponentFixture<LikeWidgetComponent> = null;
@@ -10,7 +12,7 @@ describe(LikeWidgetComponent.name, () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LikeWidgetComponent],
-      providers: [UniqueService],
+      providers: [UniqueService, LikeService, LikeStore],
       imports: [FontAwesomeModule],
     })
     .compileComponents();
